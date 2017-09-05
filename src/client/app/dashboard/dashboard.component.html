@@ -1,0 +1,51 @@
+<div class="animated slideInRight">
+  <h3>Dashboard</h3>
+  <md-tab-group>
+    <md-tab [label]="allegianceChart.xAxisLabel">
+      <div *ngIf="allegianceSummary">
+        <ngx-charts-advanced-pie-chart class="chart-fit"
+          [results]="allegianceSummary"
+          [view]="allegianceChart.view"
+          [scheme]="allegianceChart.colorScheme"
+          [gradient]="allegianceChart.gradient"
+          >
+        </ngx-charts-advanced-pie-chart>
+      </div>
+    </md-tab>
+    <md-tab [label]="planetChart.xAxisLabel">
+      <div *ngIf="planetSummary">
+        <ngx-charts-pie-chart class="chart-fit"
+          [results]="planetSummary"
+          [view]="planetChart.view"
+          [scheme]="planetChart.colorScheme"
+          [gradient]="planetChart.gradient"
+
+          [legend]="allegianceChart.showLegend"
+          [explodeSlices]="allegianceChart.explodeSlices"
+          [labels]="allegianceChart.showLabels"
+          [doughnut]="allegianceChart.doughnut"
+          >
+        </ngx-charts-pie-chart>
+      </div>
+    </md-tab>
+    <!--<md-tab label="Colors">
+      <div class="primary-a">100</div>
+      <div class="primary-b">200</div>
+      <div class="primary-c">300</div>
+      <div class="primary-d">400</div>
+      <div class="primary-e">500</div>
+      <div class="primary-f">600</div>
+      <div class="primary-g">700</div>
+      <div class="primary-h">800</div>
+
+      <div class="accent-a">100</div>
+      <div class="accent-b">200</div>
+      <div class="accent-c">300</div>
+      <div class="accent-d">400</div>
+      <div class="accent-e">500</div>
+      <div class="accent-f">600</div>
+      <div class="accent-g">700</div>
+      <div class="accent-h">800</div>
+    </md-tab>-->
+  </md-tab-group>
+</div>
