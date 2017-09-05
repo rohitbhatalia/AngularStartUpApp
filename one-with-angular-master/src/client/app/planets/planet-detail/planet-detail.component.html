@@ -1,0 +1,16 @@
+<div class="animated slideInRight detail">
+  <h2 md-header>Details</h2>
+
+  <div class="detail" *ngIf="planet">
+    <div><i></i></div>
+    <p>
+      <md-input-container>
+        <input mdInput placeholder="Name" [(ngModel)]="planet.name">
+      </md-input-container>
+    </p>
+    <p>
+      <md-checkbox [(ngModel)]="revealModel">Reveal Model</md-checkbox>
+    </p>
+    <pre *ngIf="revealModel">{{planet | json}}</pre>
+  </div>
+</div>
