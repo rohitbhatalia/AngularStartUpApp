@@ -1,53 +1,22 @@
-import { NgModule }       from '@angular/core';
-import { BrowserModule }  from '@angular/platform-browser';
-import { FormsModule }    from '@angular/forms';
-
-import { AppComponent }        from './app.component';
-import { HeroDetailComponent } from './hero-detail.component';
-import { HeroesComponent }     from './hero.component';
-import { HeroService }         from './hero.service';
-
-import { RouterModule }   from '@angular/router';
-import { DashboardComponent } from './dashboard.component';
-import { HttpModule } from '@angular/http';
-
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { ShellModule } from '@ruf/shell';
+import { MdIconModule, MdSidenavModule, MdButtonModule } from '@angular/material';
+import { AppComponent } from './app.component';
+import 'hammerjs';
 
 @NgModule({
+  declarations: [
+    AppComponent
+  ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule,
-    RouterModule.forRoot([
-      {
-        path: 'heroes',
-        component: HeroesComponent
-      },
-      {
-        path: 'dashboard',
-        component: DashboardComponent
-      },
-      {
-        path: '',
-        redirectTo: '/dashboard',
-        pathMatch: 'full'
-      },
-      {
-        path: 'detail/:id',
-        component: HeroDetailComponent
-      }
-    ])
-  ],  
-  declarations: [
-    AppComponent,
-    HeroDetailComponent,
-    HeroesComponent,
-    DashboardComponent
+    MdIconModule,
+    MdSidenavModule,
+    MdButtonModule,
+    ShellModule
   ],
-  providers: [
-    HeroService
-  ],
-  bootstrap: [ AppComponent ]
+  providers: [],
+  bootstrap: [AppComponent]
 })
-export class AppModule {
-}
-
+export class AppModule { }
